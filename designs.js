@@ -10,7 +10,6 @@ var input = document.querySelector("#sizePicker");
 //Adding listener for form submission
 input.addEventListener('submit', function(event) {
   event.preventDefault();
-
   height = document.querySelector('#inputHeight').value;
   width = document.querySelector('#inputWidth').value;
   makeGrid(height, width);
@@ -28,15 +27,11 @@ function makeGrid(input1, input2) {
     for (var x = 1; x <= input2; x++) {
       var col = document.createElement('td');
       row.appendChild(col);
+      //adding the abilit to change color of square
+      col.addEventListener('click', function() {
+        color = document.querySelector('#colorPicker').value;
+        event.target.style.backgroundColor = color;
+      }, true);
     }
   }
 }
-
-
-//changing the color using the sizePicker
-
-grid.addEventListener('click', function() {
-  color = document.querySelector('#colorPicker').value;
-
-  event.target.style.backgroundColor = color;
-})
