@@ -13,7 +13,7 @@ input.addEventListener('submit', function(event) {
   height = document.querySelector('#inputHeight').value;
   width = document.querySelector('#inputWidth').value;
   makeGrid(height, width);
-  })
+})
 
 //Store pixelCanvas id to a variable to make it easier to add rows in makeGrid
 var grid = document.querySelector('#pixelCanvas');
